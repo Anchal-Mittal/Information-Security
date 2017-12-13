@@ -1,11 +1,3 @@
-/********************************** 		MCS 103 		*******************************/
-/********************************** 	  Information Security 	  *************************************/
-/********************************** HILL CIPHER ENCRYPTION AND DECRYPTION *************************************/
-
-/*           Submitted by   	    */
-
-/*  ANCHAL MITTAL         ROLL NO: 4		    */
-
 
 
 #include<iostream>
@@ -136,12 +128,17 @@ return ctxt;
 int main()
 {
 	string in,entxt;
-	int key[3][3] = {{3,5,6},{8,1,2},{4,17,9}};
+	int key[3][3] = {{7,5,6},{8,4,2},{4,13,9}};
 	int a[3];
 	int i;
-	cout<<"enter string (CAPITAL LETTERS ONLY)";
+	cout<<"					INFORMATION SECURITY"<<endl;
+	cout<<"					ANCHAL MITTAL"<<endl;
+	cout<<"					ROLL NO -4"<< endl;
+	cout<<"                 HILL CIPHER"<<endl;
+	cout<<"ENTER THE STRING IN CAPITAL LETTER"<<endl;
+	
 	cin>>in;
-	cout<<"Encyrpted text : ";
+	cout<<"Encyrpted text is: ";
 	for(i=0;i<=in.length();i++)
 	{
 		{
@@ -154,10 +151,10 @@ int main()
 	cout<<entxt;
 	cout<<"\n";
 
-	cout<<"\ninverse key : \n";
+	cout<<"\ninverse of the key : \n";
 	inverse(key);
     string detxt;
-    cout<<"Decyrpted text : ";
+    cout<<"Decyrpted text is : ";
 	for(i=0;i<=entxt.length();i++)
 	{
 		a[i%3] = (entxt[i] - 'A');

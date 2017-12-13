@@ -4,12 +4,15 @@
 #include <iostream.h>
 
 #define r 10 			// number of rounds
+
 #define t (2*r+2) 		// number of sub-keys needed
 unsigned long S[t]; 		// array used for key expansion
 #define b 16 			// number of bytes in key
 #define c 1 			// number of words in key
 unsigned long Pw = 0xb7e15293; 	// constant used for key expansion
+
 unsigned long Qw = 0x9e3771b1; 	// constant used for key expansion
+
 #define max(i,j) (i>=j?i:j)
 class int_record
 {
@@ -127,19 +130,23 @@ void check_data_validity(int_record &inputs, int_record * decrypted)
 
 
 //Function to input the two blocks of plaintext to be encrypted
-int get_inputs( int_record &inputs)
+void get_inputs( int_record &inputs)
 {
 	cout << "\n Input first data block = 4 ";
 	inputs.data0=4;
 
 	cout << "\n Input second data block = 6 ";
 	inputs.data1=6;
-
+	 return ;
 }
 
 
 int main()
-{
+{       clrscr();
+	cout<<"                     INFORMATION SECURITY" << endl;
+	cout<<"                     ANCHAL MITTAL "<< endl;
+	cout<<"                     Roll NO 4"<<endl;
+	cout<<"                     RC5"<<endl;
 	int_record inputs;
 	int_record *encrypted;
 	int_record *decrypted;
@@ -154,11 +161,12 @@ int main()
 	key[i] = (unsigned char) (random ^ i);
 
 	key_expansion(key);
+	cout<<endl;
 	encrypted = encryption(inputs);
+	cout<<endl;
 	decrypted = decryption(encrypted);
 	cout << "TOTAL NUMBER OF ROUNDS USED HERE "<< r << endl;
-	printf("\n The generated cipher text is: %.8lX %.8lX",
-	encrypted->data0, encrypted->data1);
+	printf("\n The generated cipher text is",encrypted->data0, encrypted->data1);
 	cout << endl;
 	check_data_validity(inputs, decrypted);
 
